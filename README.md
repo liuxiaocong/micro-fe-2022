@@ -11,4 +11,10 @@ shared: {
 },
 ```
 
-In app do not need set share?
+In app aslo need set share and use bootstrap
+```js
+shared: {
+  react: { singleton: true, requiredVersion: "^18.2.0", eager: true},
+  "react-dom": { singleton: true,  requiredVersion: "^18.2.0", eager: true}
+},
+```
