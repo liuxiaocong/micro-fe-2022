@@ -28,6 +28,7 @@ module.exports = {
       // },
       remotes: {
         project1: "project1@http://localhost:8011/project1RemoteEntry.js",
+        project2: "project2@http://localhost:8012/project2RemoteEntry.js",
       }
       ,
       shared: {
