@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { ModuleFederationPlugin } = require("webpack").container;
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
@@ -14,6 +15,18 @@ module.exports = {
       title: "Project1",
       template: path.resolve(__dirname, "./public/index.html"),
       filename: "index.html",
+    }),
+    new ModuleFederationPlugin({
+      // 提供给其他服务加载的文件
+      // filename: "app1RemoteEntry.js",
+      // 唯一ID，用于标记当前服务
+      name: "project1",
+      filename: "project1RemoteEntry.js",
+      // 需要暴露的模块，使用时通过 `${name}/${expose}` 引入
+      exposes: {
+        "./Page1": "./src/Page1",
+        "./Page12": "./src/Page12",
+      }
     }),
   ],
   resolve: {
