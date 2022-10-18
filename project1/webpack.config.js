@@ -27,6 +27,11 @@ module.exports = {
         "./Page1": "./src/Page1",
         "./Page12": "./src/Page12",
       }
+      ,
+      shared: {
+        react: { singleton: true, requiredVersion: "^18.2.0",},
+        "react-dom": { singleton: true,  requiredVersion: "^18.2.0",}
+      },
     }),
   ],
   resolve: {
